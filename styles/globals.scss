@@ -1,47 +1,33 @@
 // Your variable overrides
-$primary: #bd93f9;
+$primary: #003b6d;
 $danger: #ff5555;
 $secondary: #6272a4;
-$gray-dark: #636364;
-$success: #34b64f;
-$info: #3484b7;
+$gray-dark: #282a36;
+$success: #50fa7b;
+$info: #6699cc;
 $warning: #ffb86c;
-$light: #ffffff;
+$light: #f8f8f2;
 $dark: #282a36;
 $pink: #ff79c6;
+// Primary colors:
+// Midnight Blue - #003B6D
+// Blue Sky- #6699CC
+
+// Secondary colors:
+// Dim gray - #676767
+// Silver- #BDBDBD
 
 $theme-colors: (
-  "primary": $primary,
-  "danger": $danger,
-  "secondary": $secondary,
-  "gray-dark": $gray-dark,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "light": $light,
-  "dark": $dark,
+  'primary': $primary,
+  'danger': $danger,
+  'secondary': $secondary,
+  'gray-dark': $gray-dark,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'light': $light,
+  'dark': $dark,
 );
 
-.navbar {
-  opacity: 0.98;
-  -webkit-box-shadow: 0 8px 6px -6px #999;
-  -moz-box-shadow: 0 8px 6px -6px #999;
-  box-shadow: 0 8px 6px -6px #999;
-}
-
-.card {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 1px;
-  padding-right: 1px;
-}
-
-.card-companion-text {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 1px;
-  padding-right: 1px;
-}
-
 // Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap/scss/bootstrap.scss';

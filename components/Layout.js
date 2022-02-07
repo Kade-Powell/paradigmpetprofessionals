@@ -1,28 +1,18 @@
-import { Fragment } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Fragment } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Form from 'react-bootstrap/Form';
 
-import logo from "../public/logo.png";
-import pbits from "../public/pbits.png";
-
-import {
-  CalendarEvent,
-  Facebook,
-  HouseDoor,
-  InfoCircle,
-  Instagram,
-  Newspaper,
-  PlayBtn,
-  Gift,
-} from "react-bootstrap-icons";
+import logo from '../public/logo.png';
+import logo2 from '../public/logo2.png';
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -30,157 +20,111 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <Head>
-        <title>The Journey Church</title>
-        <meta name="description" content="The Journey Church In Dublin GA" />
+        <title>Paradigm Pet Proffesionals</title>
+        <meta name="description" content="Paradigm Pet Proffesionals" />
 
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/jc.ico" />
       </Head>
 
-      <Navbar className="sticky-top container-fluid" bg="light" expand="lg">
-        <Navbar.Brand style={{ width: "30vw" }}>
-          <Image src={logo} alt="The Journey Church" />
+      <Navbar
+        className="sticky-top container-fluid navbar-dark"
+        bg="primary"
+        expand="lg"
+      >
+        <Navbar.Brand href="/">
+          <Image src={logo} layout="intrinsic" alt="logo" />
         </Navbar.Brand>
+        <h6 class="align-middle text-light">Paradigm Pet Proffesionals</h6>
         <Navbar.Toggle
           className="navbar-toggler-right"
           aria-controls="basic-navbar-nav"
         />
 
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
             <Link href="/" passHref>
               <a
                 className={
-                  router.pathname === "/"
-                    ? "nav-item nav-link  text-success"
-                    : "nav-item nav-link"
+                  router.pathname === '/'
+                    ? 'nav-item nav-link  text-success'
+                    : 'nav-item nav-link'
                 }
               >
-                <HouseDoor />
-                home
+                Home
               </a>
             </Link>
 
-            <Link href="/about" className="nav-item nav-link" passHref>
+            <Link href="/dogs" className="nav-item nav-link" passHref>
               <a
                 className={
-                  router.pathname === "/about"
-                    ? "nav-item nav-link  text-success"
-                    : "nav-item nav-link"
+                  router.pathname === '/dogs'
+                    ? 'nav-item nav-link  text-success'
+                    : 'nav-item nav-link'
                 }
               >
-                <InfoCircle />
-                about
+                Dogs
               </a>
             </Link>
 
-            <Link href="/events" className="nav-item nav-link" passHref>
+            <Link href="/cats" className="nav-item nav-link" passHref>
               <a
                 className={
-                  router.pathname === "/events"
-                    ? "nav-item nav-link  text-success"
-                    : "nav-item nav-link"
+                  router.pathname === '/cats'
+                    ? 'nav-item nav-link  text-success'
+                    : 'nav-item nav-link'
                 }
               >
-                <CalendarEvent />
-                events
+                Cats
               </a>
             </Link>
-            <Link href="/watch" className="nav-item nav-link" passHref>
+            <Link href="/fish" className="nav-item nav-link" passHref>
               <a
                 className={
-                  router.pathname === "/watch"
-                    ? "nav-item nav-link  text-success "
-                    : "nav-item nav-link"
+                  router.pathname === '/fish'
+                    ? 'nav-item nav-link  text-success '
+                    : 'nav-item nav-link'
                 }
               >
-                <PlayBtn />
-                watch
+                Fish
               </a>
             </Link>
-            <Link href="/news" className="nav-item nav-link" passHref>
-              <a
-                className={
-                  router.pathname === "/news"
-                    ? "nav-item nav-link  text-success "
-                    : "nav-item nav-link"
-                }
-              >
-                <Newspaper />
-                news
-              </a>
-            </Link>
-            <Link href="/give" className="nav-item nav-link" passHref>
-              <a
-                className={
-                  router.pathname === "/give"
-                    ? "nav-item nav-link  text-success "
-                    : "nav-item nav-link"
-                }
-              >
-                <Gift />
-                give
-              </a>
-            </Link>
+            <Form className="d-flex">
+              <Form.Control
+                size="sm"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </Form>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
       <Container>{children}</Container>
-      <Container
-        className="bg-dark text-secondary overflow-hidden"
-        fluid="true"
-      >
-        <Row>
-          <Col className="text-center">
-            <address>
-              Find us:
-              <small>
-                <br />
-                1711 Telfair St, Dublin, GA 31021
-                <br />
-                <a href="mailto:info@thejourneychurch.life">
-                  info@thejourneychurch.life
-                </a>
-              </small>
-            </address>
+      <Container className="bg-primary text-light overflow-hidden" fluid="true">
+        <Row className="mt-2">
+          <Col>
+            <Image src={logo2} layout="intrinsic" alt="logo" />
           </Col>
           <Col className="text-center">
-            Affilations:
-            <small>
-              <br />
-              <a href="http://www.laurensbaptist-ga.com/">
-                Laurens Baptist Association
-              </a>
-              <br />
-              <a href="http://gabaptist.org/">Georgia Baptist Convention</a>
-            </small>
+            <button className="btn btn-info">Schedule A Consultation</button>
           </Col>
-          <Col className="text-center ">
-            Social Media:
-            <br />
-            <Col className="small">
-              <a href="https://www.facebook.com/TheJourneyChurchDublin/">
-                <Facebook />
-              </a>
-            </Col>
-            <Col className="small">
-              <a href="https://www.instagram.com/thejourneychurchdublin/?hl=en">
-                <Instagram />
-              </a>
-            </Col>
+          <Col>
+            <div className="align-middle">Contact Us:</div>
+
+            <span className="align-middle">999-999-9999 pexperts@ppp.com</span>
+
+            <Image
+              className="float-right"
+              src={logo}
+              layout="intrinsic"
+              alt="logo"
+            />
           </Col>
         </Row>
         <Row className="overflow-hidden">
-          <Col className="text-start">
-            <small>© 2021 The Journey Church </small>
-          </Col>
-          <Col>
-            <div style={{ width: "75px" }} className="float-end">
-              <a href="https://www.pbits.online">
-                <Image src={pbits} alt="PBITS" />
-              </a>
-            </div>
+          <Col className="text-center">
+            <small>© Paradigm Pet Proffesionals 2022</small>
           </Col>
         </Row>
       </Container>
