@@ -43,7 +43,7 @@ export default function Fish() {
       <Row>
         <Col>
           <p>
-            TThere are several freshwater fish to choose from when setting up
+            There are several freshwater fish to choose from when setting up
             your aquarium, but it is best to consult with a “Pexpert” to ensure
             your fish will get along! No matter the species, ensure your fish
             are suited for a freshwater environment by investing in a water
