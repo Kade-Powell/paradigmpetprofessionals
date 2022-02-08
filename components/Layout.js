@@ -10,11 +10,12 @@ import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 import logo from '../public/logo.png';
 import logo2 from '../public/logo2.png';
-
-const Layout = ({ children }) => {
+const Layout = ({ children, handleShow, show, handleClose }) => {
   const router = useRouter();
 
   return (
@@ -100,26 +101,49 @@ const Layout = ({ children }) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Container>{children}</Container>
+      <Container>
+        {children}
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header>
+            <Modal.Title>Pexpert Consultation Form</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            I will not close if you click outside me. Don't even try to press
+            escape key.
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="danger" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary">Submit</Button>
+          </Modal.Footer>
+        </Modal>
+      </Container>
       <Container className="bg-primary text-light overflow-hidden" fluid="true">
         <Row className="mt-2">
-          <Col>
+          <Col className="text-start ms-2">
             <Image src={logo2} layout="intrinsic" alt="logo" />
           </Col>
           <Col className="text-center">
-            <button className="btn btn-info">Schedule A Consultation</button>
+            <button className="btn btn-info" onClick={handleShow}>
+              Schedule A Consultation
+            </button>
           </Col>
-          <Col>
-            <div className="align-middle">Contact Us:</div>
-
-            <span className="align-middle">999-999-9999 pexperts@ppp.com</span>
-
-            <Image
-              className="float-right"
-              src={logo}
-              layout="intrinsic"
-              alt="logo"
-            />
+          <Col sm={2} className="text-center">
+            <div className="align-middle">
+              {' '}
+              <u> Contact Us:</u>
+            </div>
+            <div className="align-middle">999-999-9999</div>
+            <div className="align-middle">pexperts@ppp.com</div>
+          </Col>
+          <Col sm={2} className="text-end me-2">
+            <Image src={logo} layout="intrinsic" alt="logo" />
           </Col>
         </Row>
         <Row className="overflow-hidden">

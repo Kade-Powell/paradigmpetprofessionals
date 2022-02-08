@@ -1,7 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-export default function Sermons() {
+export default function Fish() {
   return (
     <>
       <Row>
