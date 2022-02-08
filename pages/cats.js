@@ -1,5 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import CustomLoader from '../components/CustomLoader';
 import cat from '../public/cat.jpg';
 import cat2 from '../public/cat2.jpg';
 import cat3 from '../public/cat3.jpg';
@@ -41,19 +43,20 @@ export default function Cats({ handleShow }) {
             className="rounded-circle"
             layout="intrinsic"
             alt="cat"
+            loader={CustomLoader}
           />
         </Col>
         <Col>
           <p>
             It is important the queen (a term commonly used for a female cat
             that is either pregnant or nursing) directly nurse her young if
-            possible. Monitor your kitten's growth closely to make sure its
+            possible. Monitor your kitten&apos;s growth closely to make sure its
             growth rate is progressing steadily. If any kitten is not growing at
             a sufficient rate, a caretaker might need to feed the kitten
             directly either with a bottle or a feeding tube. Some reasons why
             kittens might not gain weight appropriately include the following:
             <ul>
-              <li>Too many other siblings are competing for mom's milk</li>
+              <li>Too many other siblings are competing for mom&apos;s milk</li>
               <li>Gastrointestinal disease</li>
               <li>
                 Environmental conditions such as extreme heat or cold, or
@@ -105,6 +108,7 @@ export default function Cats({ handleShow }) {
             src={cat2}
             className="rounded-circle"
             layout="intrinsic"
+            loader={CustomLoader}
             alt="cat"
           />
         </Col>
@@ -136,9 +140,9 @@ export default function Cats({ handleShow }) {
             experience a lot of changes. Cats at this age should eat less fats
             and calories and more quality proteins. This means when you are
             purchasing packaged foods for your cat, look for food that states a
-            particular protein (such as "salmon") and <b>not</b> just a category
-            (such as fish). This usually means they are byproducts, or
-            combinations, of lesser quality proteins.
+            particular protein (such as &quot;salmon&quot;) and <b>not</b> just
+            a category (such as fish). This usually means they are byproducts,
+            or combinations, of lesser quality proteins.
           </p>
         </Col>
         <Col sm={2}>
@@ -146,6 +150,7 @@ export default function Cats({ handleShow }) {
             src={cat3}
             className="rounded-circle"
             layout="intrinsic"
+            loader={CustomLoader}
             alt="cat"
           />
         </Col>

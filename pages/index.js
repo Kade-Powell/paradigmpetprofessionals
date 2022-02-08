@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
+import CustomLoader from '../components/CustomLoader';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import logo2 from '../public/logo2.png';
@@ -12,7 +14,12 @@ export default function Home({ handleShow }) {
     <>
       <Row className="mt-2">
         <Col>
-          <Image src={logo2} layout="intrinsic" alt="logo" />
+          <Image
+            src={logo2}
+            layout="intrinsic"
+            alt="logo"
+            loader={CustomLoader}
+          />
         </Col>
       </Row>
       <Row>
@@ -24,7 +31,7 @@ export default function Home({ handleShow }) {
       <Row>
         <Col>
           <p>
-            Pets are nature's gift to humanity. It has been scientifically
+            Pets are nature&apos;s gift to humanity. It has been scientifically
             proven that opening our homes and hearts to a pet increases our
             longevity and improves our overall quality of life as well as the
             lives of our pets. At Pet Paradigm Professionals, our mission is to
@@ -53,31 +60,34 @@ export default function Home({ handleShow }) {
       </Row>
       <Row className="mt-4 text-center">
         <Col>
-          <Link href="/dogs">
+          <Link href="/dogs" passHref>
             <Image
               src={dog}
               className="rounded-circle"
               layout="intrinsic"
+              loader={CustomLoader}
               alt="Dog"
             />
           </Link>
         </Col>
         <Col>
-          <Link href="/cats">
+          <Link href="/cats" passHref>
             <Image
               src={cat}
               className="rounded-circle"
               layout="intrinsic"
+              loader={CustomLoader}
               alt="Cat"
             />
           </Link>
         </Col>
         <Col>
-          <Link href="/fish">
+          <Link href="/fish" passHref>
             <Image
               src={fish}
               className="rounded-circle"
               layout="intrinsic"
+              loader={CustomLoader}
               alt="Fish"
             />
           </Link>
